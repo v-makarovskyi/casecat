@@ -9,6 +9,12 @@ const config = {
   ],
   theme: {
     extend: {
+      colors: {
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        }
+      },
       keyframes: {
         flashing: {
           "0,100%": { opcsity: "0.2" },
