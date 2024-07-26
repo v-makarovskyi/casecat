@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import { Recursive } from 'next/font/google'
 import "./globals.css";
 
@@ -14,6 +15,7 @@ export default function RootLayout({children}:Readonly<{children: React.ReactNod
           <div>
             {children}
           </div>
+          <Footer />
         </main>
       </body>
     </html>
