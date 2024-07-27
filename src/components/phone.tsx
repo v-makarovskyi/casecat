@@ -3,24 +3,18 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface PhoneProps extends HTMLAttributes<HTMLDivElement> {
-  imgSrc: string;
+  srcImg: string;
   dark?: boolean;
 }
 
 export default function Phone({
-  imgSrc,
+  srcImg,
   className,
   dark = false,
   ...props
 }: PhoneProps) {
   return (
-    <div
-      className={cn(
-        "relative pointer-events-none z-50 overflow-hidden",
-        className
-      )}
-      {...props}
-    >
+    <div className={cn("relative z-50 overflow-hidden pointer-events-none")}>
       <img
         src={
           dark
@@ -30,8 +24,12 @@ export default function Phone({
         alt="phone-template"
         className="pointer-events-none z-50 select-none"
       />
-      <div className="absolute inset-0 -z-10">
-        <img src={imgSrc} alt="overlaying phone image" className="object-cover min-w-full min-h-full"/>
+      <div className="absolute -z-10 inset-0">
+        <img
+          src={srcImg}
+          alt="configure-image"
+          className="object-cover min-w-full min-h-full"
+        />
       </div>
     </div>
   );
